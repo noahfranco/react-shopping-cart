@@ -13,7 +13,7 @@ const ShoppingCart = () => {
 		}, 0).toFixed(2);
 	};
 
-	const [cart] = useContext(CartContext)
+	const cart = useContext(CartContext)
 
 	return (
 		<div className="shopping-cart">
