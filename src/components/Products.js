@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 // Importing Context 
-import ProductContext from "./contexts/ProductContext.js"; 
-// Importing Context 
+import ProductContext from "../contexts/ProductContext.js"; 
+// // Importing Context 
 
 // Components
 import Product from './Product';
@@ -9,7 +9,7 @@ import Product from './Product';
 const Products = () => {
 
 // Calling the useContext Hook
-const { products, addItem } = useContext(ProductContext); 
+const { products, addItem } = useContext(ProductContext);
 // Calling the useContext Hook
 
 	return (
