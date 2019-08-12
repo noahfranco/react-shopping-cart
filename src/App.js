@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import data from './data';
 
+// Importing context 
+import ProductContext from "./contexts/ProductContext.js"; 
+// Importing Context 
+
 // Components
 import Navigation from './components/Navigation';
 import Products from './components/Products';
@@ -17,24 +21,24 @@ function App() {
 
 	return (
 		<div className="App">
+		<ProductContext.Provider value={{products, addItem}}>
 			<Navigation cart={cart} />
+		</ProductContext.Provider> 
 
 			{/* Routes */}
+			<ProductContext.Provider value={{products, addItem}}>
 			<Route
 				exact
 				path="/"
-				render={() => (
-					<Products
-						products={products}
-						addItem={addItem}
-					/>
-				)}
+				component={Products}
 			/>
-
+			</ProductContext.Provider>
+			<ProductContext.Provider value={{products, addItem}}> 
 			<Route
 				path="/cart"
 				render={() => <ShoppingCart cart={cart} />}
 			/>
+			</ProductContext.Provider> 
 		</div>
 	);
 }
